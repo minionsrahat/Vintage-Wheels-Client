@@ -33,7 +33,7 @@ const Product = (props) => {
 
                             </div>
                             <div className="text-center mt-4">
-                                <button class="btn btn-main">Place Order</button>
+                                <button onClick={()=>navigateToProductDetailspage(_id)} class="btn btn-main">Place Order</button>
                             </div>
                         </div>
                     </div>

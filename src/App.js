@@ -9,6 +9,7 @@ import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 
  import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/productdetails/:id' element={<ProductDetails></ProductDetails>}></Route>
       </Routes>
       <Footer></Footer>
     </>
