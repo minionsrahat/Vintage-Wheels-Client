@@ -62,7 +62,6 @@ const Nabvar = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-4">
-                        <NavLink></NavLink>
                         <NavLink to='/' className="nav-item nav-link">Home</NavLink>
                         {user && <>
                             <NavLink to='/DASHBOARD' className="nav-item nav-link">Dashboard</NavLink>

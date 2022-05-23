@@ -4,91 +4,87 @@ import { FaEnvelope, FaPhone, FaFacebookF, FaTwitter, FaLinkedin, FaInstagramSqu
 const Footer = () => {
     return (
         <>
-            <footer id="footer">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4 col-sm-6">
-                            <div className="footer-info">
-                                <div className="section-title">
-                                    <h2>Headquarter</h2>
-                                </div>
-                                <address>
-                                    <p>212 Halisohor <br />Chittagong, ABC 10001</p>
-                                </address>
-
-                                <ul className="social-icon text-white">
-                                    <li><FaFacebookF className='me-1'></FaFacebookF></li>
-                                    <li><FaInstagramSquare  className='me-1'></FaInstagramSquare></li>
-                                    <li><FaLinkedin  className='me-1'></FaLinkedin></li>
-                                    <li><FaInstagramSquare  className='me-1'></FaInstagramSquare></li>
+            <footer class="footer section section-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
+                        
+                            <div class="block about">
+                                
+                                <img src="images/logo-footer.png" alt="" />
+                             
+                                <p class="alt-color">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </div>
+                        </div>
+                     
+                        <div class="col-lg-2 offset-lg-1 col-md-3">
+                            <div class="block">
+                                <h4>Site Pages</h4>
+                                <ul>
+                                    <li><a href="#">Boston</a></li>
+                                    <li><a href="#">How It works</a></li>
+                                    <li><a href="#">Deals & Coupons</a></li>
+                                    <li><a href="#">Articls & Tips</a></li>
+                                    <li><a href="#">Terms of Services</a></li>
                                 </ul>
-
-                                <div className="copyright-text mt-2">
-                                    <p>Copyright &copy; 2020 Cars R Us!</p>
-                                    <p>
-                                        Designed By    <strong>minionsRahat</strong>
-                                    </p>
-                                </div>
                             </div>
                         </div>
-
-                        <div className="col-md-4 col-sm-6">
-                            <div className="footer-info">
-                                <div className="section-title">
-                                    <h2>Contact Info</h2>
-                                </div>
-                                <address>
-                                    <p>+1 333 4040 5566</p>
-                                    <p>
-                                        <a href="mailto:contact@company.com">carsrus@gmail.com</a>
-                                    </p>
-                                </address>
-
-                                <div className="footer_menu text-white">
-                                    <h2>Quick Links</h2>
-                                    <ul>
-                                        <li>Home</li>
-                                        <li>About Us</li>
-                                        <li>Terms & Conditions</li>
-                                        <li>Contact Us</li>
-                                    </ul>
-                                </div>
+                    
+                        <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
+                            <div class="block">
+                                <h4>Admin Pages</h4>
+                                <ul>
+                                    <li><a href="#">Boston</a></li>
+                                    <li><a href="#">How It works</a></li>
+                                    <li><a href="#">Deals & Coupons</a></li>
+                                    <li><a href="#">Articls & Tips</a></li>
+                                    <li><a href="#">Terms of Services</a></li>
+                                </ul>
                             </div>
                         </div>
-
-                        <div className="col-md-4 col-sm-12">
-                            <div className="footer-info newsletter-form">
-                                <div className="section-title">
-                                    <h2>Send Message</h2>
-                                </div>
-                                <div>
-                                    <div className="form-group">
-                                        <form action="#" method="get">
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="Enter your Message"
-                                                name="email"
-                                                id="email"
-                                                required
-                                            />
-                                            <input
-                                                type="submit"
-                                                className="form-control"
-                                                name="submit"
-                                                id="form-submit"
-                                                value="Send me"
-                                            />
-                                        </form>
-                                        <span><sup>*</sup> Please note -it will be a anonymous message.</span>
-                                    </div>
-                                </div>
+                     
+                        <div class="col-lg-4 col-md-7">
+                          
+                            <div class="block-2 app-promotion">
+                                <a href="">
+                                 
+                                    <img src="images/footer/phone-icon.png" alt="mobile-icon" />
+                                </a>
+                                <p>Get the Dealsy Mobile App and Save more</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
-
+          
+            <footer class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-12">
+                            <div class="copyright">
+                                <p>Copyright © 2016. All Rights Reserved</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <ul class="social-media-icons text-right">
+                                <li><a class="fa fa-facebook" href=""></a></li>
+                                <li><a class="fa fa-twitter" href=""></a></li>
+                                <li><a class="fa fa-pinterest-p" href=""></a></li>
+                                <li><a class="fa fa-vimeo" href=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="top-to">
+                    <a id="top" class="" href=""><i class="fa fa-angle-up"></i></a>
+                </div>
+            </footer>
         </>
     );
 };
