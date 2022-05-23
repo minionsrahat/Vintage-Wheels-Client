@@ -375,7 +375,7 @@ button {
   position: relative;
 }
 
-.overly:before {
+/* .overly:before {
   content: '';
   background: rgba(0, 0, 0, 0.51);
   position: absolute;
@@ -383,7 +383,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-}
+} */
 
 .page-wrapper {
   padding: 70px 0;
@@ -635,18 +635,19 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("Components/images/hero.jpg");
+  background-image: url('Components/images/hero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  /* z-index: 1; */
 }
 
-
-
-.bg-3 {
+.bg-2 {
   background: url(Components/images/cta-background.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
+
 
 .bg-4 {
   background: #5672f9;
