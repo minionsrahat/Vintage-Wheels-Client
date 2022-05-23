@@ -3,8 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase';
 import GoogleButton from 'react-google-button'
-import GithubButton from 'react-github-login-button'
-// import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner/Spinner';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,7 +26,7 @@ const Signup = () => {
         if (user) {
             console.log();
             fetch('http://localhost:5000/login', {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -47,9 +46,9 @@ const Signup = () => {
         }
     }, [user])
 
-    // if (hookloading || googleloading || githubloading) {
-    //     return <Spinner></Spinner>
-    // }
+    if (hookloading || googleloading) {
+        return <Spinner></Spinner>
+    }
 
     const handleUserMail = (e) => {
         setMail(e.target.value);
@@ -175,7 +174,24 @@ const Signup = () => {
                                                 Sign Up
                                             </button>
                                         </div>
-                                        <hr />
+                                        <div className="col-12">
+                                        <p className='text-white'>Already Have a Account?<strong> <Link to="/login">Login</Link></strong> </p>
+                                        {hookerror || googleerror? <>
+                                            <div className="text-center my-2">
+                                                <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    <strong>{hookerror?.message}{googleerror?.message}</strong>
+                                                </div>
+                                            </div>
+                                        </> : ''}
+                                        </div>
+                                        <div className="col-12">
+                                            <div class="row text-white">
+                                                <div class="col"><hr /></div>
+                                                <div class="col-auto">OR</div>
+                                                <div class="col"><hr /></div>
+                                            </div>
+                                        </div>
                                         <div className="col-12">
                                         <GoogleButton
                                                 onClick={handleGoogleButton} className="mx-auto"
