@@ -1,0 +1,9 @@
+.section-heading{
+    padding: 5px 0px;
+    font-size: 25px;
+    margin: 5px 20px 0px 0px;
+    
+}
+.section-heading h2{
+    color: #ff5400 !important;
+}

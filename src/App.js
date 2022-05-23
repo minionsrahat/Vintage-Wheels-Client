@@ -8,7 +8,7 @@ import Footer from './Components/Footer/Footer';
 import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 
-
+ import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 function App() {
   return (
