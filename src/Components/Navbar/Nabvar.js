@@ -71,10 +71,10 @@ const Nabvar = () => {
                         <NavLink to='/contactus' className="nav-item nav-link">Contact</NavLink>
                     </div>
                     {user?<>
-                     <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign Out</button>
+                     <button onClick={logout} class="btn btn-primary py-2 px-4 ms-3">Sign Out</button>
                     </>:<>
-                    <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign In</button>
-                    <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign Up</button>
+                    <button onClick={goLoginPage} class="btn btn-primary py-2 px-4 ms-3">Sign In</button>
+                    <button onClick={goSignupPage} class="btn btn-primary py-2 px-4 ms-3">Sign Up</button>
                     </>}
                 
                 
