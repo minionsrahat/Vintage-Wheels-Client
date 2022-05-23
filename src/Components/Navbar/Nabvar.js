@@ -70,8 +70,14 @@ const Nabvar = () => {
                         <NavLink to='/blogs' className="nav-item nav-link">Blogs</NavLink>
                         <NavLink to='/contactus' className="nav-item nav-link">Contact</NavLink>
                     </div>
-                    <a href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign In</a>
-                    <a href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign Up</a>
+                    {user?<>
+                     <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign Out</button>
+                    </>:<>
+                    <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign In</button>
+                    <button href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Sign Up</button>
+                    </>}
+                
+                
                 </div>
             </nav>
         </>
