@@ -15,6 +15,8 @@ import MyOrders from './Components/MyOrders/MyOrders';
 import AddReview from './Components/AddReview/AddReview';
 import ManageUser from './Components/ManageUser/ManageUser';
 import AddProduct from './Components/AddProduct/AddProduct';
+import ManageProducts from './Components/ManageProducts/ManageProducts';
+import ManageOrders from './Components/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='manageusers' element={<ManageUser></ManageUser>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='manageorders' element={<ManageOrders></ManageOrders>}></Route>
         </Route>
         <Route path='/productdetails/:id' element={<ProductDetails></ProductDetails>}></Route>
       </Routes>

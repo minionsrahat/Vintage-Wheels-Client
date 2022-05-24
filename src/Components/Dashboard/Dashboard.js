@@ -34,17 +34,16 @@ const Dashboard = () => {
                                 <div class="widget user-dashboard-menu">
                                     <ul className='d-flex flex-column'>
                                         {isAdmin?<>
-                                        <NavLink to="myorders">Manage All Orders</NavLink>
+                                        <NavLink to="manageorders">Manage All Orders</NavLink>
                                         <NavLink to="addproduct">Add A Product</NavLink>
                                         <NavLink to="manageusers">Make Admin</NavLink>
-                                        <NavLink to="myprofile">Manage Products</NavLink>
+                                        <NavLink to="manageproducts">Manage Products</NavLink>
                                         <NavLink to="myprofile">My Profile</NavLink>
                                         </>:<>
                                         <NavLink to="myorders">My Orders</NavLink>
                                         <NavLink to="addreview">Add a Review</NavLink>
                                         <NavLink to="myprofile">My Profile</NavLink>
                                         </>}
-                                        
                                     </ul>
                                 </div>
                             </div>
