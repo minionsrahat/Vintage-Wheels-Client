@@ -64,7 +64,7 @@ const Nabvar = () => {
                     <div class="navbar-nav mx-auto py-4">
                         <NavLink to='/' className="nav-item nav-link">Home</NavLink>
                         {user && <>
-                            <NavLink to='/DASHBOARD' className="nav-item nav-link">Dashboard</NavLink>
+                            <NavLink to='/dashboard' className="nav-item nav-link">Dashboard</NavLink>
                             
                         </>}
                         <NavLink to='/blogs' className="nav-item nav-link">Blogs</NavLink>
