@@ -1,8 +1,25 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { useNavigate, useParams } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Rating from 'react-rating';
 
 const ProductDetails = () => {
 
-	
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const { isLoading: productLoading, data: product } = useQuery('productdata', () =>
+		fetch(`http://localhost:5000/readSingleToolsData/${id}`).then(res =>
+			res.json()
+		)
+	)
+	if (productLoading) {
+		return <Spinner></Spinner>
+	}
+
+
 
 	return (
 		<>
@@ -12,7 +29,7 @@ const ProductDetails = () => {
 
 						<div class="col-md-8 mx-auto">
 							<div class="product-details">
-								<h1 class="product-title">Hp Dual Core 2gb Ram-Slim Laptop Available In Very Low Price</h1>
+								<h1 class="product-title">{product.name}</h1>
 								<div class="product-meta">
 									<ul class="list-inline">
 										<li class="list-inline-item"><i class="fa fa-user-o"></i> By Andrew</li>
@@ -20,29 +37,39 @@ const ProductDetails = () => {
 										<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location Dhaka Bangladesh</li>
 									</ul>
 								</div>
-								<img src="" alt="" srcset="" />
+								<img src={product.img} alt="" srcset="" />
 								<div class="content">
 									<div className="d-flex justify-content-center">
 										<div className="price bg-primary text-white px-5 py-2">
 											Price <br />
-											$365
+											${product.price}
 										</div>
 										<div className="price bg-primary text-white px-5 py-2 mx-2">
 											Min Qunatity <br />
-											$365
+											{product.min_quantity}
 										</div>
 										<div className="price bg-primary text-white px-5 py-2">
 											Available Quantity <br />
-											$365
+											{product.quantity}
 										</div>
 									</div>
 									<div class="tab-content" id="pills-tabContent">
 										<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 											<h3 class="tab-title">Product Description</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium beatae quod perspiciatis, neque dolores eos rerum, ipsa iste cum culpa numquam amet provident eveniet pariatur, sunt repellendus quas voluptate dolor cumque autem molestias. Ab quod quaerat molestias culpa eius, perferendis facere vitae commodi maxime qui numquam ex voluptatem voluptate, fuga sequi, quasi! Accusantium eligendi vitae unde iure officia amet molestiae velit assumenda, quidem beatae explicabo dolore laboriosam mollitia quod eos, eaque voluptas enim fuga laborum, error provident labore nesciunt ad. Libero reiciendis necessitatibus voluptates ab excepturi rem non, nostrum aut aperiam? Itaque, aut. Quas nulla perferendis neque eveniet ullam?</p>
-											<p></p>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat, neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur, delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
+											<p>{product.des}</p>
 										</div>
+									</div>
+									<div>
+
+									</div>
+									<div class="tab-content" id="pills-tabContent">
+										<h3 class="tab-title">Ratings</h3>
+										<Rating
+											initialRating={product.ratings}
+											emptySymbol={<FontAwesomeIcon icon={faStar} />}
+											fullSymbol={<FontAwesomeIcon style={{ color: '#e00085' }} icon={faStar} />}
+											readonly
+										></Rating>
 									</div>
 								</div>
 							</div>

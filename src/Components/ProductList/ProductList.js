@@ -7,7 +7,7 @@ import { useQuery } from 'react-query';
 
 const ProductList = () => {
     // const [product, setProduct] = useState([]);
-    const { isLoading, error, data: products } = useQuery('repoData', () =>
+    const { isLoading, error, data: products } = useQuery('productsData', () =>
         fetch('http://localhost:5000/readtoolsData?limit=6').then(res =>
             res.json()
         )
