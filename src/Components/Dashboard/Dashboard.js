@@ -1,7 +1,19 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, Outlet } from 'react-router-dom';
+import auth from '../../firebase';
+import useAdmin from '../Hooks/useAdmin';
+import Spinner from '../Spinner/Spinner';
 
 const Dashboard = () => {
+    const [user,loading]=useAuthState(auth)
+    const [isAdmin,adminLoading]=useAdmin(user)
+
+    if(loading||adminLoading)
+    {
+       return <Spinner></Spinner>
+    }
+
     return (
         <>
             <section class="dashboard section">
@@ -21,9 +33,18 @@ const Dashboard = () => {
                                 </div>
                                 <div class="widget user-dashboard-menu">
                                     <ul className='d-flex flex-column'>
+                                        {isAdmin?<>
+                                        <NavLink to="myorders">Manage All Orders</NavLink>
+                                        <NavLink to="addreview">Add A Product</NavLink>
+                                        <NavLink to="manageusers">Make Admin</NavLink>
+                                        <NavLink to="myprofile">Manage Products</NavLink>
+                                        <NavLink to="myprofile">My Profile</NavLink>
+                                        </>:<>
                                         <NavLink to="myorders">My Orders</NavLink>
                                         <NavLink to="addreview">Add a Review</NavLink>
                                         <NavLink to="myprofile">My Profile</NavLink>
+                                        </>}
+                                        
                                     </ul>
                                 </div>
                             </div>

@@ -22,7 +22,7 @@ const AddReview = () => {
 			name:userData.name
         }
         e.preventDefault();
-        fetch("http://localhost:5000/addOreview", {
+        fetch("http://localhost:5000/addreview", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const AddReview = () => {
 
     return (
         <div>
-            <div class="container">
+            <div class="container widget dashboard-container ">
                 <h4 className="text-center mb-4">Give a Review</h4>
                 <div class="row">
                     <div class="col-md-8 mx-auto">

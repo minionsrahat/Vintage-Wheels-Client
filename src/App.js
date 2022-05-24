@@ -13,6 +13,7 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyOrders from './Components/MyOrders/MyOrders';
 import AddReview from './Components/AddReview/AddReview';
+import ManageUser from './Components/ManageUser/ManageUser';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='manageusers' element={<ManageUser></ManageUser>}></Route>
         </Route>
         <Route path='/productdetails/:id' element={<ProductDetails></ProductDetails>}></Route>
       </Routes>
