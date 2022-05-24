@@ -35,7 +35,7 @@ const Dashboard = () => {
                                     <ul className='d-flex flex-column'>
                                         {isAdmin?<>
                                         <NavLink to="myorders">Manage All Orders</NavLink>
-                                        <NavLink to="addreview">Add A Product</NavLink>
+                                        <NavLink to="addproduct">Add A Product</NavLink>
                                         <NavLink to="manageusers">Make Admin</NavLink>
                                         <NavLink to="myprofile">Manage Products</NavLink>
                                         <NavLink to="myprofile">My Profile</NavLink>
