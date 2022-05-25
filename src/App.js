@@ -18,6 +18,7 @@ import AddProduct from './Components/AddProduct/AddProduct';
 import ManageProducts from './Components/ManageProducts/ManageProducts';
 import ManageOrders from './Components/ManageOrders/ManageOrders';
 import MyProfile from './Components/MyProfile/MyProfile';
+import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='manageprofile' element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path='/productdetails/:id' element={<ProductDetails></ProductDetails>}></Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
       </Routes>
       <Footer></Footer>
     </>

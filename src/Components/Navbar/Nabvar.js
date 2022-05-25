@@ -68,6 +68,7 @@ const Nabvar = () => {
                             
                         </>}
                         <NavLink to='/blogs' className="nav-item nav-link">Blogs</NavLink>
+                        <NavLink to='/portfolio' className="nav-item nav-link">Portfolio</NavLink>
                         <NavLink to='/contactus' className="nav-item nav-link">Contact</NavLink>
                     </div>
                     {user?<>
