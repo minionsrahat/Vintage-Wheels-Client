@@ -19,6 +19,7 @@
     "react-github-login-button": "^1.0.1",
     "react-google-button": "^0.7.2",
     "react-icons": "^4.3.1",
+    "react-owl-carousel": "^2.3.3",
     "react-query": "^3.39.0",
     "react-rating": "^2.0.5",
     "react-rating-stars-component": "^2.2.0",
