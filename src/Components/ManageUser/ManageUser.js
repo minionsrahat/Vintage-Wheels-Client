@@ -10,7 +10,7 @@ const ManageUser = () => {
     const [user,loading]=useAuthState(auth)
     // const [isAdmin,adminLoading]=useAdmin(user)
 
-    const { isLoading: userLoading, data: users } = useQuery(['usersdata',user], () =>
+    const { isLoading: userLoading, data: users ,refetch} = useQuery(['usersdata',user], () =>
 		fetch(`http://localhost:5000/readUserData`).then(res =>
 			res.json()
 		)
@@ -35,7 +35,7 @@ const ManageUser = () => {
                     </thead>
                     <tbody>
                      {users && users?.map(userdata=>{
-                         return <UserTableRow key={userdata._id} user={userdata}></UserTableRow>
+                         return <UserTableRow refetch={refetch} key={userdata._id} user={userdata}></UserTableRow>
                      })}
                     </tbody>
                 </table>
