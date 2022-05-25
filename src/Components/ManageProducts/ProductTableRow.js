@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase';
 import DeleteConfirmation from "../DeleteConfirmation/DeleteConfirmation";
+import {ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ProductTableRow = ({ product }) => {
+const ProductTableRow = ({ product ,refetch}) => {
     const [id, setId] = useState(null);
     const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
     const [deleteMessage, setDeleteMessage] = useState(null);
+    const [user, loading] = useAuthState(auth);
+    const email = user?.email
 
     const showDeleteModal = (id) => {
-       
+
         setId(id);
         setDeleteMessage(`Are you sure you want to delete the product?`);
         setDisplayConfirmationModal(true);
@@ -20,13 +26,47 @@ const ProductTableRow = ({ product }) => {
 
     // Handle the actual deletion of the item
     const submitDelete = (id) => {
-      
+
+        console.log(id);
+        const token = localStorage.getItem('accessToken')
+        fetch(`http://localhost:5000/deleteToolsData/${id}`, {
+            method: "DELETE",
+            headers: {
+                accesstoken: `${email} ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then((data) => {
+                const { acknowledged, deletedCount } = data
+                const { error } = data
+                if (acknowledged && deletedCount == 1) {
+                    // const newproductlist = product.filter((element) => {
+                    //     return element._id !== id;
+                    // })
+                    // setProduct(newproductlist)
+                    toast("Delete SuccessFull!!")
+                    refetch()
+                }
+                else if (error) {
+                    toast(error)
+                }
+            })
         setDisplayConfirmationModal(false);
     };
 
     return (
         <>
-
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <tr>
                 <td class="product-thumb">
                     <img width="80px" height="auto" src={product.img} alt="" /></td>
@@ -41,13 +81,13 @@ const ProductTableRow = ({ product }) => {
                 <td class="action" data-title="Action">
                     <div class="">
                         <ul class="list-inline justify-content-center d-flex">
-                            <button type="button" class="btn btn-danger p-1"onClick={() => showDeleteModal(product._id)} >Delete</button>
+                            <button type="button" class="btn btn-danger p-1" onClick={() => showDeleteModal(product._id)} >Delete</button>
                         </ul>
                     </div>
 
                 </td>
             </tr>
-            <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete} hideModal={hideConfirmationModal} id={id} message={deleteMessage}  />
+            <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete} hideModal={hideConfirmationModal} id={id} message={deleteMessage} />
         </>
 
     );

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button } from "react-bootstrap";
 
-const DeleteConfirmation = ({ showModal, hideModal, confirmModal, id, type, message }) => {
+const DeleteConfirmation = ({ showModal, hideModal, confirmModal, id,message }) => {
     return (
         <Modal show={showModal} onHide={hideModal}>
         <Modal.Header closeButton>
@@ -12,7 +12,7 @@ const DeleteConfirmation = ({ showModal, hideModal, confirmModal, id, type, mess
           <Button variant="default" onClick={hideModal}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={() => confirmModal(type, id) }>
+          <Button variant="danger" onClick={() => confirmModal( id) }>
             Delete
           </Button>
         </Modal.Footer>

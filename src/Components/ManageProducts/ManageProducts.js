@@ -5,14 +5,19 @@ import Spinner from '../Spinner/Spinner';
 import ProductTableRow from './ProductTableRow';
 
 const ManageProducts = () => {
-    const { isLoading, error, data: products } = useQuery('productsData', () =>
+    const { isLoading, error, data: products,refetch } = useQuery('productsData', () =>
         fetch('http://localhost:5000/readtoolsData').then(res =>
             res.json()
         )
     )
+
+
+
+    
     if (isLoading) {
         return <Spinner></Spinner>
     }
+
     return (
       <>
         <div class="widget dashboard-container my-adslist">
@@ -28,7 +33,7 @@ const ManageProducts = () => {
                     </thead>
                     <tbody>
                      {products.map(product=>{
-                         return <ProductTableRow  key={product._id} product={product}></ProductTableRow>
+                         return <ProductTableRow refetch={refetch}  key={product._id} product={product}></ProductTableRow>
                      })}
                     </tbody>
                 </table>

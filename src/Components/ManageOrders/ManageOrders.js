@@ -4,7 +4,7 @@ import Spinner from '../Spinner/Spinner';
 import OrderTableRow from './OrderTableRow';
 
 const ManageOrders = () => {
-    const { isLoading, error, data: orders } = useQuery('ordersdata', () =>
+    const { isLoading, error, data: orders ,refetch} = useQuery('ordersdata', () =>
     fetch('http://localhost:5000/readorders').then(res =>
         res.json()
     )
@@ -28,7 +28,7 @@ return (
                 </thead>
                 <tbody>
                  {orders.map(order=>{
-                     return <OrderTableRow key={order._id} order={order}></OrderTableRow>
+                     return <OrderTableRow refetch={refetch} key={order._id} order={order}></OrderTableRow>
                  })}
                 </tbody>
             </table>
