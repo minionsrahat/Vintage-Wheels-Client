@@ -45,7 +45,7 @@ const Dashboard = () => {
                                             <li> <NavLink to="addreview">Add a Review</NavLink></li>
                                             <li><NavLink to="myprofile">My Profile</NavLink></li>
                                         </>}
-                                        <li><NavLink to="myprofile">My Profile</NavLink></li>
+                                        <li><NavLink to="manageprofile">My Profile</NavLink></li>
                                         
                                     </ul>
                                 </div>
