@@ -4,6 +4,10 @@ body {
   line-height: 1.5;
   font-family: "Muli", sans-serif;
 }
+.active{
+  font-weight: bolder;
+  color: #025fd3!important;
+}
 
 p, li, input, select, button {
   font-family: "Muli", sans-serif;
@@ -412,88 +416,12 @@ button {
  * Button Styles
  *
  */
-.btn {
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 4px;
-}
 
-.btn-main, .btn-main-sm {
+
+.btn-main {
   background: #5672f9;
   color: #fff;
 }
-
-.btn-main:hover, .btn-main-sm:hover {
-  background: #082de1;
-  color: #fff;
-}
-
-.btn-main-sm {
-  padding: 6px 20px;
-  font-size: 12px;
-}
-
-.btn-secondary {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
-}
-
-.btn-secondary:hover {
-  background: #5672f9;
-  color: #fff;
-  border-color: #fff;
-}
-
-.btn-transparent {
-  background: transparent;
-  color: #5672f9;
-  border: 1px solid #5672f9;
-}
-
-.btn-transparent:hover {
-  background: #082de1;
-  color: #fff;
-}
-
-.btn-transparent-white {
-  background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-}
-
-.btn-transparent-white:hover {
-  background: #fff;
-  color: #848484;
-}
-
-.btn-group .btn i {
-  font-size: 16px;
-  line-height: 40px;
-}
-
-.btn-group .btn:focus {
-  color: #d0d0d0;
-}
-
-.btn-group .btn-transparent {
-  color: #d0d0d0;
-  border: 1px solid #d0d0d0;
-  padding: 0;
-  width: 40px;
-}
-
-.btn-group .btn-transparent:hover {
-  color: #e6b322;
-  background: transparent;
-}
-
-.btn-active {
-  color: #e6b322;
-}
-
 
 
 /**
@@ -617,10 +545,13 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background-image: url('Components/images/hero.jpg');
+  background-image: url('https://folderauto.com/wp-content/uploads/2021/11/slide2.jpg');
   background-size: cover;
+  
   background-repeat: no-repeat;
-  /* z-index: 1; */
+  /* background:linear-gradient(0deg, rgba(255, 0, 150, 0.1), rgba(255, 0, 150, 0.1)), url(Components/images/bg.jpg); */
+ 
+ 
 }
 
 .bg-2 {

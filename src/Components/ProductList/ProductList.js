@@ -23,11 +23,7 @@ const ProductList = () => {
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-title">
-                                <h2>Trending Ads</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,
-                                    magnam.
-                                </p>
+                                <h2>Trending Products</h2>
                             </div>
                         </div>
                     </div>

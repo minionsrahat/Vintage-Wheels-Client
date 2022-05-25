@@ -8,10 +8,17 @@ const BussinessSummary = () => {
         <>
             <div class="my-5 py-5">
                 <div class="container mt-5">
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title">
+                                <h2>Bussiness Summary</h2>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row g-5 align-items-center m-0">
                         <div class="col-lg-6">
                             <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Vintage Wheels</span></h1>
-                            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                            <p class="mb-4">Vintage wheels is an Automobile spare parts and accessories manufacturing organization for Passenger vehicles and commercial vehicles. We mainly produce Engine Air Elements, Cabin Filter, for Engine intake air systems and we also produce Engine oil Filter and Engine coolant water.</p>
                             <div class="row g-3 pb-4">
                                 <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="border rounded p-1">
@@ -41,7 +48,7 @@ const BussinessSummary = () => {
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="/">Explore More</a>
+                            <button class="btn btn-primary py-3 px-5 mt-2" >Explore More</button>
                         </div>
                         <div class="col-lg-6">
                             <div class="row g-3">

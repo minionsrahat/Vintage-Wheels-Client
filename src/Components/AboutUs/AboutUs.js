@@ -15,18 +15,17 @@ const AboutUs = () => {
                                     About Us
                                 </h5>
                                 <h1 class="display-5 mb-0">
-                                    The World's Best Dental Clinic That You Can Trust
+                                    The World's Best Automotive Parts Company That You Can Trust
                                 </h1>
                             </div>
                             <h4 class="text-body fst-italic mb-4">
-                                Diam dolor diam ipsum sit. Clita erat ipsum et lorem stet no lorem
-                                sit clita duo justo magna dolore
+                                To deliver precision and top quality products through ensuring safety and durability
                             </h4>
                             <p class="mb-4">
-                                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor
-                                sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem
-                                et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
-                                tempor eirmod magna dolore erat amet
+                                We sets the standards and trends in the highly dynamic automotive aftermarket parts industry,
+                                 always staying a step ahead of the competition. Using the latest cutting-edge technologies,
+                                  impeccable design processes and precision, We proudly supplies products adhering to the highest standards, 
+                                  ensuring both quality and safety.
                             </p>
                             <div class="row g-3">
                                 <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">

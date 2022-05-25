@@ -16,11 +16,8 @@ const OtherServices = () => {
                         <div class="col-12">
 
                             <div class="section-title">
-                                <h2>All Categories</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Perferendis, provident!
-                                </p>
+                                <h2>Our Other Business</h2>
+                               
                             </div>
                             <div class="row">
 

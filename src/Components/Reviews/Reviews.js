@@ -17,6 +17,13 @@ const Reviews = () => {
     return (
         <>
             <div className="container my-5">
+            <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title">
+                                <h2>Customer Reviews</h2>
+                            </div>
+                        </div>
+                    </div>
                 <OwlCarousel className='owl-theme testimonial-carousel p-2' responsiveClass='true' loop margin={10} nav>
                    
                 {reviews.map((review)=>{

@@ -1,6 +1,10 @@
 import React from 'react';
 import './Banner.css'
-
+import {BiBed} from 'react-icons/bi'
+import {FaGrav} from 'react-icons/fa'
+import {FaCarSide} from 'react-icons/fa'
+import {MdFastfood} from 'react-icons/md'
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <>
@@ -14,22 +18,20 @@ const Banner = () => {
                                 <h1>Buy & Sell Near You </h1>
                                 <p>Join the millions who buy and sell from each other  everyday in local communities around the world</p>
                                 <div class="short-popular-category-list text-center">
-                                    <h2>Popular Category</h2>
-                                    <ul class="list-inline">
+                                    <h2>Our Other Popular Business</h2>
+                                    <ul class="list-inline text-white">
                                         <li class="list-inline-item">
-                                            <a href=""><i class="fa fa-bed"></i> Hotel</a></li>
+                                            <Link to="/"><BiBed></BiBed>Hotel</Link></li>
                                         <li class="list-inline-item">
-                                            <a href=""><i class="fa fa-grav"></i> Fitness</a>
+                                            <Link to="/"><FaGrav></FaGrav> Fitness</Link>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href=""><i class="fa fa-car"></i> Cars</a>
+                                            <Link to="/"><FaCarSide></FaCarSide> Cars</Link>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href=""><i class="fa fa-cutlery"></i> Restaurants</a>
+                                            <Link to="/"><MdFastfood></MdFastfood> Restaurants</Link>
                                         </li>
-                                        <li class="list-inline-item">
-                                            <a href=""><i class="fa fa-coffee"></i> Cafe</a>
-                                        </li>
+                                      
                                     </ul>
                                 </div>
 
@@ -48,7 +50,7 @@ const Banner = () => {
                                             <div class="block d-flex">
                                                 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"/>
                                                 
-                                                    <button class="btn btn-main">SEARCH</button>
+                                                    <button class="btn btn-main ms-2">SEARCH</button>
                                             </div>
                                         </div>
                                     </div>
