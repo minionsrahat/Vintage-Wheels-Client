@@ -8,14 +8,14 @@ import UserTableRow from './UserTableRow';
 
 const ManageUser = () => {
     const [user,loading]=useAuthState(auth)
-    const [isAdmin,adminLoading]=useAdmin(user)
+    // const [isAdmin,adminLoading]=useAdmin(user)
 
-    const { isLoading: userLoading, data: users } = useQuery(['userdata',user], () =>
+    const { isLoading: userLoading, data: users } = useQuery(['usersdata',user], () =>
 		fetch(`http://localhost:5000/readUserData`).then(res =>
 			res.json()
 		)
 	)
-    if(loading||adminLoading||userLoading)
+    if(userLoading || loading)
     {
         return <Spinner></Spinner>
     }
@@ -34,8 +34,8 @@ const ManageUser = () => {
                         </tr>
                     </thead>
                     <tbody>
-                     {users.map(user=>{
-                         return <UserTableRow key={user._id} user={user}></UserTableRow>
+                     {users && users?.map(userdata=>{
+                         return <UserTableRow key={userdata._id} user={userdata}></UserTableRow>
                      })}
                     </tbody>
                 </table>

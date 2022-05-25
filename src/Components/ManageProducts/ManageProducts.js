@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import Modal from '../Modal/Modal';
 import Spinner from '../Spinner/Spinner';
 import ProductTableRow from './ProductTableRow';
 
@@ -27,14 +28,11 @@ const ManageProducts = () => {
                     </thead>
                     <tbody>
                      {products.map(product=>{
-                         return <ProductTableRow key={product._id} product={product}></ProductTableRow>
+                         return <ProductTableRow  key={product._id} product={product}></ProductTableRow>
                      })}
                     </tbody>
                 </table>
-
             </div>
-        
-       
       </>
     );
 };

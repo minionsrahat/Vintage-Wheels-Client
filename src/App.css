@@ -225,20 +225,12 @@ figure {
   margin: 0;
 }
 
-a {
-  transition: all .3s ease-in 0s;
-  color: #000;
-}
 
 iframe {
   border: 0;
 }
 
-a:focus, a:hover {
-  text-decoration: none;
-  outline: 0;
-  color: #5672f9;
-}
+
 
 .form-control {
   border-radius: 2px;
@@ -289,9 +281,6 @@ textarea.form-control {
   margin-top: 20px;
 }
 
-.btn:focus {
-  color: #ddd;
-}
 
 .w-100 {
   width: 100%;
@@ -303,10 +292,6 @@ textarea.form-control {
 
 button {
   cursor: pointer;
-}
-
-.btn.active:focus, .btn:active:focus, .btn:focus {
-  outline: 0;
 }
 
 .bg-shadow {
@@ -509,10 +494,7 @@ button {
   color: #e6b322;
 }
 
-.btn:focus {
-  color: #5672f9;
-  box-shadow: none;
-}
+
 
 /**
  *

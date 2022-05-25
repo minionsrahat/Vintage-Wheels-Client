@@ -28,6 +28,7 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+          {/* <Route path='' element={<MyOrders></MyOrders>}></Route> */}
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='manageusers' element={<ManageUser></ManageUser>}></Route>
