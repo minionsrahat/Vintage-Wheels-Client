@@ -17,7 +17,7 @@ const OtherServices = () => {
 
                             <div class="section-title">
                                 <h2>Our Other Business</h2>
-                               
+
                             </div>
                             <div class="row">
 
@@ -25,7 +25,7 @@ const OtherServices = () => {
                                     <div class="category-block">
                                         <div class="header">
                                             <AiOutlineLaptop className='icon-bg-1'> </AiOutlineLaptop>
-                                          
+
                                             <h4>Electronics</h4>
                                         </div>
                                         <ul class="category-list">
@@ -48,7 +48,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <MdFastfood className='icon-bg-1'> </MdFastfood>
+                                            <MdFastfood className='icon-bg-1'> </MdFastfood>
 
                                             <h4>Restaurants</h4>
                                         </div>
@@ -72,7 +72,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <MdRealEstateAgent className='icon-bg-1'> </MdRealEstateAgent>
+                                            <MdRealEstateAgent className='icon-bg-1'> </MdRealEstateAgent>
                                             <h4>Real Estate</h4>
                                         </div>
                                         <ul class="category-list">
@@ -95,7 +95,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <BsCartPlus className='icon-bg-1'> </BsCartPlus>
+                                            <BsCartPlus className='icon-bg-1'> </BsCartPlus>
                                             <h4>Shoppings</h4>
                                         </div>
                                         <ul class="category-list">
@@ -118,7 +118,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <BiBookOpen className='icon-bg-1'> </BiBookOpen>
+                                            <BiBookOpen className='icon-bg-1'> </BiBookOpen>
                                             <h4>Jobs</h4>
                                         </div>
                                         <ul class="category-list">
@@ -145,7 +145,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <MdPets className='icon-bg-1'> </MdPets>
+                                            <MdPets className='icon-bg-1'> </MdPets>
 
                                             <h4>Vehicles</h4>
                                         </div>
@@ -169,7 +169,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" >
                                     <div class="category-block">
                                         <div class="header">
-                                        <MdPets className='icon-bg-1'> </MdPets>
+                                            <MdPets className='icon-bg-1'> </MdPets>
 
                                             <h4>Pets</h4>
                                         </div>
@@ -193,7 +193,7 @@ const OtherServices = () => {
                                 <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                     <div class="category-block">
                                         <div class="header">
-                                        <AiOutlineLaptop className='icon-bg-1'></AiOutlineLaptop>
+                                            <AiOutlineLaptop className='icon-bg-1'></AiOutlineLaptop>
                                             <h4>Services</h4>
                                         </div>
                                         <ul class="category-list">
