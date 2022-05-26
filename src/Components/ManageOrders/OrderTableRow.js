@@ -15,7 +15,7 @@ const OrderTableRow = (props) => {
     const email = user?.email
     const { _id, product_id, quantity, phone, address, name, paid, trid, shipped } = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
-        fetch(`http://localhost:5000/readSingleToolsData/${product_id}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${product_id}`).then(res =>
             res.json()
         )
     )
@@ -38,7 +38,7 @@ const OrderTableRow = (props) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`http://localhost:5000/deleteOrdersData/${id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/deleteOrdersData/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`
@@ -60,7 +60,7 @@ const OrderTableRow = (props) => {
     };
 
     const shippedProduct = (id) => {
-        fetch(`http://localhost:5000/paymentupdate/${id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/paymentupdate/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

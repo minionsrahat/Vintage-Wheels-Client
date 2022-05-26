@@ -29,7 +29,7 @@ const ProductTableRow = ({ product ,refetch}) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`http://localhost:5000/deleteToolsData/${id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/deleteToolsData/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`

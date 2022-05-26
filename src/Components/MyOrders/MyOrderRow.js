@@ -17,7 +17,7 @@ const MyOrderRow = (props) => {
 
     const { _id,product_id, quantity, phone, address,price ,paid,trid} = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
-        fetch(`http://localhost:5000/readSingleToolsData/${product_id}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${product_id}`).then(res =>
             res.json()
         )
     )
@@ -40,7 +40,7 @@ const MyOrderRow = (props) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`http://localhost:5000/deleteuserorder/${id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/deleteuserorder/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`

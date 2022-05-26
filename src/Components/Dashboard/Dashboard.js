@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [user, loading] = useAuthState(auth)
     const [isAdmin, adminLoading] = useAdmin(user)
     const { isLoading: userloading, data: userData ,refetch} = useQuery(['userprofiledata', user], () =>
-        fetch(`http://localhost:5000/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )

@@ -11,7 +11,7 @@ const ManageUser = () => {
     // const [isAdmin,adminLoading]=useAdmin(user)
 
     const { isLoading: userLoading, data: users ,refetch} = useQuery(['usersdata',user], () =>
-		fetch(`http://localhost:5000/readUserData`).then(res =>
+		fetch(`https://arcane-shore-13420.herokuapp.com/readUserData`).then(res =>
 			res.json()
 		)
 	)

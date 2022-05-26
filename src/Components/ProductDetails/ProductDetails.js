@@ -22,14 +22,14 @@ const ProductDetails = () => {
 
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/readUserData?email=${user?.email}`)
+		fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`)
 			.then(res => res.json())
 			.then(data => setUserdata(data))
 	}, [user])
 
 
 	const { isLoading: productLoading, data: product } = useQuery('productdata', () =>
-		fetch(`http://localhost:5000/readSingleToolsData/${id}`).then(res =>
+		fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${id}`).then(res =>
 			res.json()
 		)
 	)
@@ -88,7 +88,7 @@ const ProductDetails = () => {
 			name: userData.name
 		}
 		e.preventDefault();
-		fetch("http://localhost:5000/addOrder", {
+		fetch("https://arcane-shore-13420.herokuapp.com/addOrder", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',

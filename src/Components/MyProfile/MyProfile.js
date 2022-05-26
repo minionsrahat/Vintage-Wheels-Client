@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [user, loading] = useAuthState(auth)
 
     const { isLoading: userloading, data: userData ,refetch} = useQuery(['userprofiledata', user], () =>
-        fetch(`http://localhost:5000/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -20,6 +20,8 @@ const MyProfile = () => {
     const [phone, setPhone] = useState(userData?.phone || '');
     const [age, setAge] = useState(userData?.age || '');
     const [address, setAddress] = useState(userData?.address || '');
+    const [education, setEducation] = useState(userData?.education || '');
+    const [linkedinprofile, setLinkedinprofile] = useState(userData?.linkedinprofile || '');
 
     useEffect(()=>{
         setName(userData?.name || '')
@@ -27,6 +29,8 @@ const MyProfile = () => {
         setPhone(userData?.phone || '')
         setAge(userData?.age || '')
         setAddress(userData?.address || '')
+        setEducation(userData?.education || '')
+        setLinkedinprofile(userData?.linkedinprofile || '')
     },[userData])
 
     const handleFormsubmit = (e) => {
@@ -37,10 +41,13 @@ const MyProfile = () => {
             age: age,
             phone: phone,
             address: address,
+            education:education,
+            linkedinprofile:linkedinprofile
+
         }
         e.preventDefault();
         console.log(updateuser);
-        fetch(`http://localhost:5000/updateuserprofile/${userData._id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/updateuserprofile/${userData._id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
@@ -129,6 +136,18 @@ const MyProfile = () => {
                                             <div class="form-floating">
                                                 <input type="text" onChange={(e) => setPhone(e.target.value)} value={phone} class="form-control"  id="subject" placeholder="Your Phone Number" />
                                                 <label for="subject">Your Phone Number</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" onChange={(e) => setEducation(e.target.value)} value={education} class="form-control"  id="subject" placeholder="Your Education Details" />
+                                                <label for="subject">Your Education Details</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" onChange={(e) => setLinkedinprofile(e.target.value)} value={linkedinprofile} class="form-control"  id="subject" placeholder="Your Linkedin Profile Link" />
+                                                <label for="subject">Your Linkedin Profile Link</label>
                                             </div>
                                         </div>
 

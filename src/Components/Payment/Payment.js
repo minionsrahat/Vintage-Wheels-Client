@@ -14,10 +14,10 @@ const Payment = () => {
     const { id } = useParams();
 
 
-    const { data: order, isLoading: orderLoading } = useQuery(['singleorderdata', id], () => fetch(`http://localhost:5000/readSingleOrderData/${id}`)
+    const { data: order, isLoading: orderLoading } = useQuery(['singleorderdata', id], () => fetch(`https://arcane-shore-13420.herokuapp.com/readSingleOrderData/${id}`)
         .then(res => res.json()));
 
-    // const { data: product, isLoading: productLoading } = useQuery(['singleproductdata',order], () => fetch(`http://localhost:5000/readSingleToolsData/${order?.product_id}`)
+    // const { data: product, isLoading: productLoading } = useQuery(['singleproductdata',order], () => fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${order?.product_id}`)
     //  .then(res => res.json()));
 
     if (orderLoading) {

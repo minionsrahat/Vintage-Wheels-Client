@@ -44,7 +44,7 @@ const Blogs = () => {
                         </p>
                     </div>
                     <div className="col-md-10 mx-auto">
-                        <h3>3. What are the different ways to manage a state in a React application?</h3>
+                        <h3>4. What are the different ways to manage a state in a React application?</h3>
                         <p>
                         There are four main types of state you need to properly manage in your React apps:
                         </p>
@@ -60,7 +60,7 @@ const Blogs = () => {
                     </div>
 
                     <div className="col-md-10 mx-auto">
-                        <h3>3. You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h3>
+                        <h3>5. You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h3>
                         <p>
                         In ES6 we can use Array.prototype.find(predicate, thisArg?) like so: i will use array.find method to find product by its name
                         <br />

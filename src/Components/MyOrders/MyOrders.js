@@ -13,7 +13,7 @@ const MyOrders = () => {
 
 
     const { isLoading, error, data: orders, refetch } = useQuery(['myordersdata', user], () =>
-        fetch(`http://localhost:5000/readmyorders?email=${user?.email}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readmyorders?email=${user?.email}`).then(res =>
             res.json()
         )
     )

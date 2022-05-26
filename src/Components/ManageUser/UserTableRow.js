@@ -31,7 +31,7 @@ const UserTableRow = ({ user: userData,refetch }) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`http://localhost:5000/makeadmin/${id}`, {
+        fetch(`https://arcane-shore-13420.herokuapp.com/makeadmin/${id}`, {
             method: "PUT",
             headers: {
                 accesstoken: `${email} ${token}`

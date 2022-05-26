@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase';
 import './Navbar.css'
 import {MdAttachEmail} from 'react-icons/md'
@@ -50,11 +50,11 @@ const Nabvar = () => {
             </div>
             <nav
                 class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
+                <Link to='/' class="navbar-brand p-0">
                     <h1 class="m-0 text-primary">
                         Vitage Wheels
                     </h1>
-                </a>
+                </Link>
                 <button
                     class="navbar-toggler"
                     type="button"

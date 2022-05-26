@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase';
 import Spinner from '../Spinner/Spinner';
 
@@ -17,7 +18,7 @@ const AddProduct = () => {
     const quantity = useRef('');
 
     const { isLoading: userloading, data: userData } = useQuery(['userdata', user], () =>
-        fetch(`http://localhost:5000/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -38,7 +39,7 @@ const AddProduct = () => {
             
         }
         e.preventDefault();
-        fetch("http://localhost:5000/addproduct", {
+        fetch("https://arcane-shore-13420.herokuapp.com/addproduct", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -52,10 +53,10 @@ const AddProduct = () => {
 
                 if (acknowledged) {
                     document.getElementById("product-form").reset();
-                    alert('Product Added Successfully')
+                    toast('Product Added Successfully')
                 }
                 else {
-                    alert("Unexpected Error Occured!! Please Fill Up form carefully")
+                    toast("Unexpected Error Occured!!Or Unauthorize access Please Fill Up form carefully")
                 }
             })
     }
@@ -67,9 +68,17 @@ const AddProduct = () => {
         <>
             <div>
                 <div class="container widget dashboard-container ">
-                    <h4 className="text-center mb-4">Add New Product</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2>Add New Product</h2>
+
+                        </div>
+                    </div>
+                </div>
                     <div class="row">
                         <div class="col-md-8 mx-auto">
+                            <ToastContainer></ToastContainer>
                             <div class="wow fadeInUp" data-wow-delay="0.2s">
                                 <form onSubmit={handleFormsubmit} id="product-form">
                                     <div class="row g-3">

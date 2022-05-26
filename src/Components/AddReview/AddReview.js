@@ -10,7 +10,7 @@ const AddReview = () => {
     const [rating, setRating] = useState(1)
     const [user, loading] = useAuthState(auth)
     const { isLoading: userloading, data: userData } = useQuery(['userdata', user], () =>
-        fetch(`http://localhost:5000/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -18,7 +18,7 @@ const AddReview = () => {
     const onSubmit = (newreview) =>{
         const token = localStorage.getItem('accessToken')
         newreview.rating=rating;
-        fetch("http://localhost:5000/addreview", {
+        fetch("https://arcane-shore-13420.herokuapp.com/addreview", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

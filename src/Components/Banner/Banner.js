@@ -16,7 +16,7 @@ const Banner = () => {
                           
                             <div class="content-block">
                                 <h1>Buy & Sell Near You </h1>
-                                <p>Join the millions who buy and sell from each other  everyday in local communities around the world</p>
+                                <p>Join the millions who buy from us  everyday from around the world</p>
                                 <div class="short-popular-category-list text-center">
                                     <h2>Our Other Popular Business</h2>
                                     <ul class="list-inline text-white">
@@ -38,7 +38,7 @@ const Banner = () => {
                             </div>
                            
                             <div class="advance-search">
-                                <form action="#">
+                           
                                     <div class="row">
                                       
                                         <div class="col-lg-6 col-md-12">
@@ -54,7 +54,7 @@ const Banner = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                               
 
                             </div>
 
