@@ -104,15 +104,10 @@ const Signup = () => {
                         <div class="col-lg-6 py-5">
                             <div class="py-5">
                                 <h1 class="display-5 text-white mb-4">
-                                    We Are A Certified and Award Winning Dental Clinic You Can Trust
+                                    We Are A Certified and Award Winning Automotive Company You Can Trust
                                 </h1>
                                 <p class="text-white mb-0">
-                                    Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd
-                                    ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo
-                                    rebum sea invidunt voluptua. Eos vero eos vero ea et dolore
-                                    eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores
-                                    magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus
-                                    sed.
+                                We sets the standards and trends in the highly dynamic automotive aftermarket parts industry, always staying a step ahead of the competition. Using the latest cutting-edge technologies, impeccable design processes and precision, We proudly supplies products adhering to the highest standards, ensuring both quality and safety.
                                 </p>
 
                             </div>
@@ -175,7 +170,7 @@ const Signup = () => {
                                             </button>
                                         </div>
                                         <div className="col-12">
-                                        <p className='text-white'>Already Have a Account?<strong> <Link to="/login">Login</Link></strong> </p>
+                                        <p className='text-white'>Already Have a Account?<strong> <Link to="/login" className='text-white'>Login</Link></strong> </p>
                                         {hookerror || googleerror? <>
                                             <div className="text-center my-2">
                                                 <div className="alert alert-danger alert-dismissible fade show" role="alert">

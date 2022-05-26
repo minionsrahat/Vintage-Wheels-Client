@@ -1,0 +1,9 @@
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px}
+.error-template img{
+    padding: 20px;
+    width: 400px;
+    border-radius: 50%;
+    border: 3px solid #e00085 ;;
+}

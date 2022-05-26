@@ -1,15 +1,21 @@
 import React from 'react';
 import './Dashboard.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet,Link } from 'react-router-dom';
 import auth from '../../firebase';
 import useAdmin from '../Hooks/useAdmin';
 import Spinner from '../Spinner/Spinner';
 import imageavatar from '../images/user-thumb.jpg'
+import { useQuery } from 'react-query';
 
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth)
     const [isAdmin, adminLoading] = useAdmin(user)
+    const { isLoading: userloading, data: userData ,refetch} = useQuery(['userprofiledata', user], () =>
+        fetch(`http://localhost:5000/readUserData?email=${user?.email}`).then(res =>
+            res.json()
+        )
+    )
 
     if (loading || adminLoading) {
         return <Spinner></Spinner>
@@ -26,11 +32,11 @@ const Dashboard = () => {
                             <div class="sidebar">
                                 <div class="widget user-dashboard-profile">
                                     <div class="profile-thumb">
-                                        <img src={imageavatar} alt="" class="rounded-circle" />
+                                        <img src={`${userData?.img?userData.img:imageavatar}`} alt="" class="rounded-circle" />
                                     </div>
-                                    <h5 class="text-center">{user?.email}</h5>
+                                    <h5 class="text-center">{userData?.name}</h5>
                                     {/* <p>Joined February 06, 2017</p> */}
-                                    <a href="user-profile.html" class="btn btn-main-sm">My Profile</a>
+                                    <Link to="manageprofile">My Profile</Link>
                                 </div>
                                 <div class="widget user-dashboard-menu">
                                     <ul className='d-flex flex-column'>
@@ -43,7 +49,6 @@ const Dashboard = () => {
                                         </> : <>
                                             <li><NavLink to="myorders">My Orders</NavLink></li>
                                             <li> <NavLink to="addreview">Add a Review</NavLink></li>
-                                            <li><NavLink to="myprofile">My Profile</NavLink></li>
                                         </>}
                                         <li><NavLink to="manageprofile">My Profile</NavLink></li>
                                         

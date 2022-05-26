@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase';
@@ -7,6 +7,7 @@ import Spinner from '../Spinner/Spinner';
 const AddProduct = () => {
     const [user, loading] = useAuthState(auth)
 
+  
     const name = useRef('');
     const des = useRef('');
     const img = useRef('');
@@ -21,6 +22,7 @@ const AddProduct = () => {
         )
     )
 
+   
 
     const handleFormsubmit = (e) => {
         const token = localStorage.getItem('accessToken')
@@ -49,6 +51,7 @@ const AddProduct = () => {
                 const { error } = data
 
                 if (acknowledged) {
+                    document.getElementById("product-form").reset();
                     alert('Product Added Successfully')
                 }
                 else {
@@ -68,7 +71,7 @@ const AddProduct = () => {
                     <div class="row">
                         <div class="col-md-8 mx-auto">
                             <div class="wow fadeInUp" data-wow-delay="0.2s">
-                                <form onSubmit={handleFormsubmit} id="review-form">
+                                <form onSubmit={handleFormsubmit} id="product-form">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <div class="form-floating">
@@ -118,6 +121,7 @@ const AddProduct = () => {
                                                 <label for="email">Available Quantity</label>
                                             </div>
                                         </div>
+                                      
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="number" ref={ratings} class="form-control" required id="email" placeholder="Initial Ratings" />

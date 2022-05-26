@@ -70,7 +70,14 @@ const MyProfile = () => {
         <>
             <div>
                 <div class="container widget dashboard-container ">
-                    <h4 className="text-center mb-4">Update Your Profile</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2>Update Your Profile</h2>
+
+                        </div>
+                    </div>
+                </div>
                     <ToastContainer></ToastContainer>
                     <div class="row">
                         <div class="col-md-8 mx-auto">

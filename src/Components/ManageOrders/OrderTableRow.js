@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase';
 import Spinner from '../Spinner/Spinner';
-import {ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DeleteConfirmation from '../DeleteConfirmation/DeleteConfirmation';
 
@@ -12,9 +12,8 @@ const OrderTableRow = (props) => {
     const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
     const [deleteMessage, setDeleteMessage] = useState(null);
     const [user, loading] = useAuthState(auth);
-
     const email = user?.email
-    const {_id, product_id, quantity, phone, address, name } = props.order
+    const { _id, product_id, quantity, phone, address, name, paid, trid, shipped } = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
         fetch(`http://localhost:5000/readSingleToolsData/${product_id}`).then(res =>
             res.json()
@@ -60,13 +59,36 @@ const OrderTableRow = (props) => {
         setDisplayConfirmationModal(false);
     };
 
+    const shippedProduct = (id) => {
+        fetch(`http://localhost:5000/paymentupdate/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                shipped: true
+            })
+        }).then(res => res.json())
+            .then(data => {
+                const { acknowledged } = data
+                if(acknowledged){
+                    toast('Product Status Updated to Shipped')
+                    props.refetch()
+                }
+                else
+                {
+                    toast('Sorry Unexpected Error Occurs')
+                }
+            })
+    }
+
 
     if (productLoading) {
         return <Spinner></Spinner>
     }
     return (
         <>
-           <ToastContainer
+            <ToastContainer
                 position="top-right"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -85,20 +107,22 @@ const OrderTableRow = (props) => {
                     <span class="add-id"><strong>Quantity:</strong> {quantity}</span>
                     <span><strong>Phone: </strong>{phone} </span>
                     <span><strong>Price: </strong>${parseInt(product.price) * parseInt(quantity)} </span>
-                    <span class="status active"><strong>Status</strong>Active</span>
+                    <span className='status'><strong>Status</strong>
+                        {paid ? <>{shipped ? <span class="d-inline  badge text-success">Shipped</span> : <span class="d-inline  badge text-primary">Pending</span>}</> : <span class="d-inline badge text-danger">Unpaid</span>}
+                    </span>
                     <span class="location"><strong>Location</strong>{address}</span>
                 </td>
                 <td class="product-category"><span class="categories">{name}</span></td>
                 <td class="action" data-title="Action">
                     <div class="">
                         <ul class="list-inline justify-content-center d-flex">
-                            <button type="button" class="btn btn-success p-1 me-2">Payment</button>
-                            <button type="button"  class="btn btn-danger p-1" onClick={() => showDeleteModal(_id)}>Cancel</button>
+                            <button type="button" class="btn btn-success p-1 me-2" disabled={!paid || shipped} onClick={() => shippedProduct(_id)} >Shipped</button>
+                            <button type="button" class="btn btn-danger p-1" disabled={paid} onClick={() => showDeleteModal(_id)}>Cancel</button>
                         </ul>
                     </div>
                 </td>
             </tr>
-            <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete} hideModal={hideConfirmationModal} id={id} message={deleteMessage} />
+            <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete}   hideModal={hideConfirmationModal} id={id} message={deleteMessage} />
 
         </>
     );

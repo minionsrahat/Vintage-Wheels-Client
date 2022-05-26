@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import Spinner from '../Spinner/Spinner';
 import OrderTableRow from './OrderTableRow';
@@ -9,6 +9,12 @@ const ManageOrders = () => {
         res.json()
     )
 )
+
+
+
+
+
+
 if (isLoading) {
     return <Spinner></Spinner>
 }
