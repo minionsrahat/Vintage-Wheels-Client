@@ -47,8 +47,8 @@ const ProductTableRow = ({ product ,refetch}) => {
                     toast("Delete SuccessFull!!")
                     refetch()
                 }
-                else if (error) {
-                    toast(error)
+                else  {
+                    toast('Sorry Unexpected Error occured!! Unauthorize Access')
                 }
             })
         setDisplayConfirmationModal(false);

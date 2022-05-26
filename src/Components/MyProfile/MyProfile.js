@@ -94,7 +94,7 @@ const MyProfile = () => {
 
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" onChange={(e) => setName(e.target.value)} value={name} id="name" />
+                                                <input type="text" class="form-control" onChange={(e) => setName(e.target.value)} readOnly value={name} id="name" />
                                                 <label for="name">Your Name</label>
                                             </div>
                                         </div>

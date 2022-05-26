@@ -23,9 +23,9 @@ const Product = (props) => {
                             <img class="card-img-top" src={img} alt="" />
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">{name}</h4>
+                            <h4 class="card-title">{name.slice(0,30)}...</h4>
                             <p class="card-text">
-                                {des}
+                                {des.slice(0,100)}...
                             </p>
                             <div class="product-ratings">
                                 <Rating
@@ -36,7 +36,7 @@ const Product = (props) => {
                                 ></Rating>
                             </div>
                             <div className="my-2">
-                                <span className='d-block'>Minimum Quantity:{min_quantity}</span>
+                                <span className='d-block'>Minimum Order Quantity:{min_quantity}</span>
                                 <span className='d-block'>Available Quantity:{quantity}</span>
                             </div>
                             <h4>Unit Price:${price}</h4>

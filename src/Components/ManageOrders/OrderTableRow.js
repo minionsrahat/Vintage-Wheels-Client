@@ -13,6 +13,7 @@ const OrderTableRow = (props) => {
     const [deleteMessage, setDeleteMessage] = useState(null);
     const [user, loading] = useAuthState(auth);
     const email = user?.email
+    const token = localStorage.getItem('accessToken')
     const { _id, product_id, quantity, phone, address, name, paid, trid, shipped } = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
         fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${product_id}`).then(res =>
@@ -37,7 +38,7 @@ const OrderTableRow = (props) => {
     const submitDelete = (id) => {
 
         console.log(id);
-        const token = localStorage.getItem('accessToken')
+       
         fetch(`https://arcane-shore-13420.herokuapp.com/deleteOrdersData/${id}`, {
             method: "DELETE",
             headers: {
@@ -64,6 +65,7 @@ const OrderTableRow = (props) => {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
+                accesstoken: `${email} ${token}`
             },
             body: JSON.stringify({
                 shipped: true
