@@ -5,7 +5,7 @@ import OrderTableRow from './OrderTableRow';
 
 const ManageOrders = () => {
     const { isLoading, error, data: orders ,refetch} = useQuery('ordersdata', () =>
-    fetch('https://arcane-shore-13420.herokuapp.com/readorders').then(res =>
+    fetch('https://vintagewheels.onrender.com/readorders').then(res =>
         res.json()
     )
 )
@@ -20,16 +20,16 @@ if (isLoading) {
 }
 return (
   <>
-    <div class="widget dashboard-container my-adslist">
-            <h3 class="widget-header text-center">Total Orders : {orders?.length}</h3>
+    <div className="widget dashboard-container my-adslist">
+            <h3 className="widget-header text-center">Total Orders : {orders?.length}</h3>
             <div className="table-responsive ">
-            <table class="table product-dashboard-table">
+            <table className="table product-dashboard-table">
                 <thead>
                     <tr>
                         <th>Image</th>
                         <th>Product Information</th>
-                        <th class="text-center">Customer Information</th>
-                        <th class="text-center">Action</th>
+                        <th className="text-center">Customer Information</th>
+                        <th className="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>

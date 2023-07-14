@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, name, email } = order;
 
     useEffect(() => {
-        fetch('https://arcane-shore-13420.herokuapp.com/create-payment-intent', {
+        fetch('https://vintagewheels.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
                 paid: true,
                 trid: paymentIntent.id
             }
-            fetch(`https://arcane-shore-13420.herokuapp.com/paymentupdate/${_id}`, {
+            fetch(`https://vintagewheels.onrender.com/paymentupdate/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

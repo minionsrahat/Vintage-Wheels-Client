@@ -15,19 +15,19 @@ const Product = (props) => {
 
     return (
         <>
-            <div class="col-sm-12 col-lg-4">
+            <div className="col-sm-12 col-lg-4">
 
-                <div class="product-item bg-light">
-                    <div class="card">
-                        <div class="thumb-content">
-                            <img class="card-img-top" src={img} alt="" />
+                <div className="product-item bg-light">
+                    <div className="card">
+                        <div className="thumb-content">
+                            <img className="card-img-top" src={img} alt="" />
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title">{name.slice(0,30)}...</h4>
-                            <p class="card-text">
+                        <div className="card-body">
+                            <h4 className="card-title">{name.slice(0,30)}...</h4>
+                            <p className="card-text">
                                 {des.slice(0,100)}...
                             </p>
-                            <div class="product-ratings">
+                            <div className="product-ratings">
                                 <Rating
                                     initialRating={ratings}
                                     emptySymbol={<FontAwesomeIcon icon={faStar} />}
@@ -42,7 +42,7 @@ const Product = (props) => {
                             <h4>Unit Price:${price}</h4>
                             
                             <div className="text-center mt-4">
-                                <button onClick={() => navigateToProductDetailspage(_id)} class="btn btn-main">Place Order</button>
+                                <button onClick={() => navigateToProductDetailspage(_id)} className="btn btn-primary">Place Order</button>
                             </div>
                         </div>
                     </div>

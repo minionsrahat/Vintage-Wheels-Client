@@ -13,9 +13,9 @@ const WelcomeDashboard = () => {
     }
     return (
         <>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="section-title">
                         <h2>Welcome To Your Dashboard</h2>
                         <p>{isAdmin?'Admin Dashboard':'User Dashboard'}</p>
                     </div>

@@ -11,7 +11,7 @@ const ManageUser = () => {
     // const [isAdmin,adminLoading]=useAdmin(user)
 
     const { isLoading: userLoading, data: users ,refetch} = useQuery(['usersdata',user], () =>
-		fetch(`https://arcane-shore-13420.herokuapp.com/readUserData`).then(res =>
+		fetch(`https://vintagewheels.onrender.com/readUserData`).then(res =>
 			res.json()
 		)
 	)
@@ -23,14 +23,14 @@ const ManageUser = () => {
 
     return (
        <>
-          <div class="widget dashboard-container my-adslist">
-                <h3 class="widget-header text-center">Total Users {users?.length}</h3>
-                <table class="table table-responsive product-dashboard-table">
+          <div className="widget dashboard-container my-adslist">
+                <h3 className="widget-header text-center">Total Users {users?.length}</h3>
+                <table className="table table-responsive product-dashboard-table">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th class="text-center">Action</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>

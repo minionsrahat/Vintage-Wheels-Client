@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [user, loading] = useAuthState(auth)
     const [isAdmin, adminLoading] = useAdmin(user)
     const { isLoading: userloading, data: userData ,refetch} = useQuery(['userprofiledata', user], () =>
-        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://vintagewheels.onrender.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -23,22 +23,22 @@ const Dashboard = () => {
 
     return (
         <>
-            <section class="dashboard section">
-                <div class="container">
+            <section className="dashboard section">
+                <div className="container">
 
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+                    <div className="row">
+                        <div className="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
 
-                            <div class="sidebar">
-                                <div class="widget user-dashboard-profile">
-                                    <div class="profile-thumb">
-                                        <img src={`${userData?.img?userData.img:imageavatar}`} alt="" class="rounded-circle" />
+                            <div className="sidebar">
+                                <div className="widget user-dashboard-profile">
+                                    <div className="profile-thumb">
+                                        <img src={`${userData?.img?userData.img:imageavatar}`} alt="" className="rounded-circle" />
                                     </div>
-                                    <h5 class="text-center">{userData?.name}</h5>
+                                    <h5 className="text-center">{userData?.name}</h5>
                                     {/* <p>Joined February 06, 2017</p> */}
                                     <Link to="manageprofile">My Profile</Link>
                                 </div>
-                                <div class="widget user-dashboard-menu">
+                                <div className="widget user-dashboard-menu">
                                     <ul className='d-flex flex-column'>
 
                                         {isAdmin ? <>
@@ -56,7 +56,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                        <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 
                             <Outlet></Outlet>
 

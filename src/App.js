@@ -25,6 +25,7 @@ import Payment from './Components/Payment/Payment';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
 import Blogs from './Components/Blogs/Blogs';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         }></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

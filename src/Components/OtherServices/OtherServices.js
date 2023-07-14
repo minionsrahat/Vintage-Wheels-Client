@@ -9,26 +9,26 @@ import { MdPets } from 'react-icons/md';
 const OtherServices = () => {
     return (
         <>
-            <section class="section">
+            <section className="section">
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
 
-                            <div class="section-title">
+                            <div className="section-title">
                                 <h2>Our Other Business</h2>
 
                             </div>
-                            <div class="row">
+                            <div className="row">
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <AiOutlineLaptop className='icon-bg-1'> </AiOutlineLaptop>
 
                                             <h4>Electronics</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Laptops <span>93</span></a>
                                             </li>
@@ -45,14 +45,14 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <MdFastfood className='icon-bg-1'> </MdFastfood>
 
                                             <h4>Restaurants</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Cafe <span>393</span></a>
                                             </li>
@@ -69,13 +69,13 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <MdRealEstateAgent className='icon-bg-1'> </MdRealEstateAgent>
                                             <h4>Real Estate</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Farms <span>93</span></a>
                                             </li>
@@ -92,13 +92,13 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <BsCartPlus className='icon-bg-1'> </BsCartPlus>
                                             <h4>Shoppings</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Mens Wears <span>53</span></a>
                                             </li>
@@ -115,13 +115,13 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <BiBookOpen className='icon-bg-1'> </BiBookOpen>
                                             <h4>Jobs</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">It Jobs <span>93</span></a>
                                             </li>
@@ -142,14 +142,14 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <MdPets className='icon-bg-1'> </MdPets>
 
                                             <h4>Vehicles</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Bus <span>193</span></a>
                                             </li>
@@ -166,14 +166,14 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" >
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" >
+                                    <div className="category-block">
+                                        <div className="header">
                                             <MdPets className='icon-bg-1'> </MdPets>
 
                                             <h4>Pets</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Cats <span>65</span></a>
                                             </li>
@@ -190,13 +190,13 @@ const OtherServices = () => {
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-                                    <div class="category-block">
-                                        <div class="header">
+                                <div className="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                                    <div className="category-block">
+                                        <div className="header">
                                             <AiOutlineLaptop className='icon-bg-1'></AiOutlineLaptop>
                                             <h4>Services</h4>
                                         </div>
-                                        <ul class="category-list">
+                                        <ul className="category-list">
                                             <li>
                                                 <a href="/">Cleaning <span>93</span></a>
                                             </li>

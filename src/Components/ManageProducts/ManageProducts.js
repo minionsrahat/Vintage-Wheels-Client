@@ -6,7 +6,7 @@ import ProductTableRow from './ProductTableRow';
 
 const ManageProducts = () => {
     const { isLoading, error, data: products,refetch } = useQuery('productsData', () =>
-        fetch('https://arcane-shore-13420.herokuapp.com/readtoolsData').then(res =>
+        fetch('https://vintagewheels.onrender.com/readtoolsData').then(res =>
             res.json()
         )
     )
@@ -20,15 +20,15 @@ const ManageProducts = () => {
 
     return (
       <>
-        <div class="widget dashboard-container my-adslist">
-                <h3 class="widget-header text-center">Total Products : {products?.length}</h3>
-                <table class="table table-responsive product-dashboard-table">
+        <div className="widget dashboard-container my-adslist">
+                <h3 className="widget-header text-center">Total Products : {products?.length}</h3>
+                <table className="table table-responsive product-dashboard-table">
                     <thead>
                         <tr>
                             <th>Image</th>
                             <th>Product Information</th>
-                            <th class="text-center">Category</th>
-                            <th class="text-center">Action</th>
+                            <th className="text-center">Category</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>

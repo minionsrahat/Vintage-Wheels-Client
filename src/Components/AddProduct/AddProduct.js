@@ -18,7 +18,7 @@ const AddProduct = () => {
     const quantity = useRef('');
 
     const { isLoading: userloading, data: userData } = useQuery(['userdata', user], () =>
-        fetch(`https://arcane-shore-13420.herokuapp.com/readUserData?email=${user?.email}`).then(res =>
+        fetch(`https://vintagewheels.onrender.com/readUserData?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -39,7 +39,7 @@ const AddProduct = () => {
             
         }
         e.preventDefault();
-        fetch("https://arcane-shore-13420.herokuapp.com/addproduct", {
+        fetch("https://vintagewheels.onrender.com/addproduct", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -67,78 +67,78 @@ const AddProduct = () => {
     return (
         <>
             <div>
-                <div class="container widget dashboard-container ">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
+                <div className="container widget dashboard-container ">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="section-title">
                             <h2>Add New Product</h2>
 
                         </div>
                     </div>
                 </div>
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
+                    <div className="row">
+                        <div className="col-md-8 mx-auto">
                             <ToastContainer></ToastContainer>
-                            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <div className="wow fadeInUp" data-wow-delay="0.2s">
                                 <form onSubmit={handleFormsubmit} id="product-form">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" readOnly id="name" value={userData.name} />
+                                    <div className="row g-3">
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="text" className="form-control" readOnly id="name" value={userData.name} />
                                                 <label for="name">Your Name</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="email" readOnly class="form-control" value={userData.email} id="email" />
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="email" readOnly className="form-control" value={userData.email} id="email" />
                                                 <label for="email">Your Email</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input ref={name} type="text" class="form-control" required id="subject" placeholder="Product Title" />
+                                        <div className="col-12">
+                                            <div className="form-floating">
+                                                <input ref={name} type="text" className="form-control" required id="subject" placeholder="Product Title" />
                                                 <label for="subject">Product Title</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" ref={des} class="form-control" required id="subject" placeholder="Product Description" />
+                                        <div className="col-12">
+                                            <div className="form-floating">
+                                                <input type="text" ref={des} className="form-control" required id="subject" placeholder="Product Description" />
                                                 <label for="subject">Product Description</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" ref={img} class="form-control" required id="subject" placeholder="Image URL" />
+                                        <div className="col-12">
+                                            <div className="form-floating">
+                                                <input type="text" ref={img} className="form-control" required id="subject" placeholder="Image URL" />
                                                 <label for="subject">Image URL</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="number" ref={price} class="form-control" required id="name" placeholder="Unit Price" />
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="number" ref={price} className="form-control" required id="name" placeholder="Unit Price" />
                                                 <label for="name">Unit Price</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="number" ref={min_quantity} class="form-control" required id="email" placeholder="Minimum Order Quantity" />
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="number" ref={min_quantity} className="form-control" required id="email" placeholder="Minimum Order Quantity" />
                                                 <label for="email">Minimum Order Quantity</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="number" ref={quantity} class="form-control" required id="email" placeholder="Available Quantity" />
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="number" ref={quantity} className="form-control" required id="email" placeholder="Available Quantity" />
                                                 <label for="email">Available Quantity</label>
                                             </div>
                                         </div>
                                       
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input type="number" ref={ratings} class="form-control" required id="email" placeholder="Initial Ratings" />
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input type="number" ref={ratings} className="form-control" required id="email" placeholder="Initial Ratings" />
                                                 <label for="email">Initial Ratings</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Add Product</button>
+                                        <div className="col-12">
+                                            <button className="btn btn-primary w-100 py-3" type="submit">Add Product</button>
                                         </div>
                                     </div>
                                 </form>

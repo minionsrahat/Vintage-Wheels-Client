@@ -13,7 +13,7 @@ const MyOrders = () => {
 
 
     const { isLoading, error, data: orders, refetch } = useQuery(['myordersdata', user], () =>
-        fetch(`https://arcane-shore-13420.herokuapp.com/readmyorders?email=${user?.email}`).then(res =>
+        fetch(`https://vintagewheels.onrender.com/readmyorders?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -25,23 +25,23 @@ const MyOrders = () => {
 
     return (
         <>
-            <div class="widget dashboard-container my-adslist">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
+            <div className="widget dashboard-container my-adslist">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="section-title">
                             <h2>My Orders: {orders?.length}</h2>
 
                         </div>
                     </div>
                 </div>
 
-                <table class="table table-responsive product-dashboard-table">
+                <table className="table table-responsive product-dashboard-table">
                     <thead>
                         <tr>
                             <th>Image</th>
                             <th>Product Title</th>
-                            <th class="text-center">TRID</th>
-                            <th class="text-center">Action</th>
+                            <th className="text-center">TRID</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>

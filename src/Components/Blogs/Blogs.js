@@ -64,7 +64,13 @@ const Blogs = () => {
                         <p>
                         In ES6 we can use Array.prototype.find(predicate, thisArg?) like so: i will use array.find method to find product by its name
                         <br />
-                         let obj = array.find(product 	= &#62;product.name === 'name')
+                        const searchProduct=(array,name)= &#62;
+                         array.find(product 	= &#62;product.name === name)
+
+                         <br />
+                         
+                         console.log(searchProduct(array,'book'))
+
 
                         </p>  
 

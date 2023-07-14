@@ -16,7 +16,7 @@ const OrderTableRow = (props) => {
     const token = localStorage.getItem('accessToken')
     const { _id, product_id, quantity, phone, address, name, paid, trid, shipped } = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
-        fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${product_id}`).then(res =>
+        fetch(`https://vintagewheels.onrender.com/readSingleToolsData/${product_id}`).then(res =>
             res.json()
         )
     )
@@ -39,7 +39,7 @@ const OrderTableRow = (props) => {
 
         console.log(id);
        
-        fetch(`https://arcane-shore-13420.herokuapp.com/deleteOrdersData/${id}`, {
+        fetch(`https://vintagewheels.onrender.com/deleteOrdersData/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`
@@ -61,7 +61,7 @@ const OrderTableRow = (props) => {
     };
 
     const shippedProduct = (id) => {
-        fetch(`https://arcane-shore-13420.herokuapp.com/paymentupdate/${id}`, {
+        fetch(`https://vintagewheels.onrender.com/paymentupdate/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -102,24 +102,24 @@ const OrderTableRow = (props) => {
                 pauseOnHover
             />
             <tr>
-                <td class="product-thumb">
+                <td className="product-thumb">
                     <img width="80px" height="auto" src={product.img} alt="" /></td>
-                <td class="product-details">
-                    <h3 class="title">{product.name}</h3>
-                    <span class="add-id"><strong>Quantity:</strong> {quantity}</span>
+                <td className="product-details">
+                    <h3 className="title">{product.name}</h3>
+                    <span className="add-id"><strong>Quantity:</strong> {quantity}</span>
                     <span><strong>Phone: </strong>{phone} </span>
                     <span><strong>Price: </strong>${parseInt(product.price) * parseInt(quantity)} </span>
                     <span className='status'><strong>Status</strong>
-                        {paid ? <>{shipped ? <span class="d-inline  badge text-success">Shipped</span> : <span class="d-inline  badge text-primary">Pending</span>}</> : <span class="d-inline badge text-danger">Unpaid</span>}
+                        {paid ? <>{shipped ? <span className="d-inline  badge text-success">Shipped</span> : <span className="d-inline  badge text-primary">Pending</span>}</> : <span className="d-inline badge text-danger">Unpaid</span>}
                     </span>
-                    <span class="location"><strong>Location</strong>{address}</span>
+                    <span className="location"><strong>Location</strong>{address}</span>
                 </td>
-                <td class="product-category"><span class="categories">{name}</span></td>
-                <td class="action" data-title="Action">
-                    <div class="">
-                        <ul class="list-inline justify-content-center d-flex">
-                            <button type="button" class="btn btn-success p-1 me-2" disabled={!paid || shipped} onClick={() => shippedProduct(_id)} >Shipped</button>
-                            <button type="button" class="btn btn-danger p-1" disabled={paid} onClick={() => showDeleteModal(_id)}>Cancel</button>
+                <td className="product-category"><span className="categories">{name}</span></td>
+                <td className="action" data-title="Action">
+                    <div className="">
+                        <ul className="list-inline justify-content-center d-flex">
+                            <button type="button" className="btn btn-success p-1 me-2" disabled={!paid || shipped} onClick={() => shippedProduct(_id)} >Shipped</button>
+                            <button type="button" className="btn btn-danger p-1" disabled={paid} onClick={() => showDeleteModal(_id)}>Cancel</button>
                         </ul>
                     </div>
                 </td>

@@ -8,27 +8,27 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <>
-            <section class="hero-area bg-1 text-center overly">
+            <section className="hero-area bg-1 text-center overly">
               
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
                           
-                            <div class="content-block">
+                            <div className="content-block">
                                 <h1>Buy & Sell Near You </h1>
                                 <p>Join the millions who buy from us  everyday from around the world</p>
-                                <div class="short-popular-category-list text-center">
+                                <div className="short-popular-category-list text-center">
                                     <h2>Our Other Popular Business</h2>
-                                    <ul class="list-inline text-white">
-                                        <li class="list-inline-item">
+                                    <ul className="list-inline text-white">
+                                        <li className="list-inline-item">
                                             <Link to="/"><BiBed></BiBed>Hotel</Link></li>
-                                        <li class="list-inline-item">
+                                        <li className="list-inline-item">
                                             <Link to="/"><FaGrav></FaGrav> Fitness</Link>
                                         </li>
-                                        <li class="list-inline-item">
+                                        <li className="list-inline-item">
                                             <Link to="/"><FaCarSide></FaCarSide> Cars</Link>
                                         </li>
-                                        <li class="list-inline-item">
+                                        <li className="list-inline-item">
                                             <Link to="/"><MdFastfood></MdFastfood> Restaurants</Link>
                                         </li>
                                       
@@ -37,20 +37,20 @@ const Banner = () => {
 
                             </div>
                            
-                            <div class="advance-search">
+                            <div className="advance-search">
                            
-                                    <div class="row">
+                                    <div className="row">
                                       
-                                        <div class="col-lg-6 col-md-12">
-                                            <div class="block d-flex">
-                                                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"/>
+                                        <div className="col-lg-6 col-md-12">
+                                            <div className="block d-flex">
+                                                <input type="text" className="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"/>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-12">
-                                            <div class="block d-flex">
-                                                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"/>
+                                        <div className="col-lg-6 col-md-12">
+                                            <div className="block d-flex">
+                                                <input type="text" className="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"/>
                                                 
-                                                    <button class="btn btn-main ms-2">SEARCH</button>
+                                                    <button className="btn btn-main ms-2">SEARCH</button>
                                             </div>
                                         </div>
                                     </div>

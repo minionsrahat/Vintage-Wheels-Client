@@ -17,7 +17,7 @@ const MyOrderRow = (props) => {
 
     const { _id,product_id, quantity, phone, address,price ,paid,trid} = props.order
     const { isLoading: productLoading, data: product } = useQuery(['productdata', product_id], () =>
-        fetch(`https://arcane-shore-13420.herokuapp.com/readSingleToolsData/${product_id}`).then(res =>
+        fetch(`https://vintagewheels.onrender.com/readSingleToolsData/${product_id}`).then(res =>
             res.json()
         )
     )
@@ -40,7 +40,7 @@ const MyOrderRow = (props) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`https://arcane-shore-13420.herokuapp.com/deleteuserorder/${id}`, {
+        fetch(`https://vintagewheels.onrender.com/deleteuserorder/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`
@@ -71,24 +71,24 @@ const MyOrderRow = (props) => {
     return (
         <>
             <tr>
-                <td class="product-thumb">
+                <td className="product-thumb">
                     <img width="80px" height="auto" src={product.img} alt="" /></td>
-                <td class="product-details">
-                    <h3 class="title">{product.name}</h3>
-                    <span class="add-id"><strong>Quantity:</strong> {quantity}</span>
+                <td className="product-details">
+                    <h3 className="title">{product.name}</h3>
+                    <span className="add-id"><strong>Quantity:</strong> {quantity}</span>
                     <span><strong>Phone: </strong>{phone} </span>
                     <span><strong>Price: </strong>${parseInt(product.price) * parseInt(quantity)} </span>
                    
-                    <span className='status'><strong>Status</strong>{paid ?<span class="d-inline  badge text-success">Paid</span>: <span class="d-inline badge text-danger">Pending</span>}</span>
-                    <span class="location"><strong>Location</strong>{address}</span>
+                    <span className='status'><strong>Status</strong>{paid ?<span className="d-inline  badge text-success">Paid</span>: <span className="d-inline badge text-danger">Pending</span>}</span>
+                    <span className="location"><strong>Location</strong>{address}</span>
                 </td>
-                <td class="product-category"><span class="categories">{paid ? trid : 'Payment Pending'}</span></td>
-                <td class="action" data-title="Action">
-                    <div class="">
-                        <ul class="list-inline justify-content-center d-flex">
+                <td className="product-category"><span className="categories">{paid ? trid : 'Payment Pending'}</span></td>
+                <td className="action" data-title="Action">
+                    <div className="">
+                        <ul className="list-inline justify-content-center d-flex">
 
-                            <button type="button" disabled={paid==true} class="btn btn-success p-1 me-2" onClick={()=>goPaymentPage(_id)}>{paid?'Paid':'Payment'}</button>
-                            <button type="button"disabled={paid==true} class="btn btn-danger p-1"onClick={() => showDeleteModal(_id)}>Cancel</button>
+                            <button type="button" disabled={paid==true} className="btn btn-success p-1 me-2" onClick={()=>goPaymentPage(_id)}>{paid?'Paid':'Payment'}</button>
+                            <button type="button"disabled={paid==true} className="btn btn-danger p-1"onClick={() => showDeleteModal(_id)}>Cancel</button>
                         </ul>
                     </div>
                 </td>

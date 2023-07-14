@@ -29,7 +29,7 @@ const ProductTableRow = ({ product ,refetch}) => {
 
         console.log(id);
         const token = localStorage.getItem('accessToken')
-        fetch(`https://arcane-shore-13420.herokuapp.com/deleteToolsData/${id}`, {
+        fetch(`https://vintagewheels.onrender.com/deleteToolsData/${id}`, {
             method: "DELETE",
             headers: {
                 accesstoken: `${email} ${token}`
@@ -68,20 +68,20 @@ const ProductTableRow = ({ product ,refetch}) => {
                 pauseOnHover
             />
             <tr>
-                <td class="product-thumb">
+                <td className="product-thumb">
                     <img width="80px" height="auto" src={product.img} alt="" /></td>
-                <td class="product-details">
-                    <h3 class="title">{product.name}</h3>
-                    <span class="add-id"><strong>Available Quantity:</strong> {product.quantity}</span>
+                <td className="product-details">
+                    <h3 className="title">{product.name}</h3>
+                    <span className="add-id"><strong>Available Quantity:</strong> {product.quantity}</span>
                     <span><strong>Min Order Quantity: </strong>{product.min_quantity} </span>
                     <span><strong>Price: </strong>${parseInt(product.price)} </span>
-                    <span class="status active"><strong>Status</strong>Active</span>
+                    <span className="status active"><strong>Status</strong>Active</span>
                 </td>
-                <td class="product-category"><span class="categories">Auto mobile Parts</span></td>
-                <td class="action" data-title="Action">
-                    <div class="">
-                        <ul class="list-inline justify-content-center d-flex">
-                            <button type="button" class="btn btn-danger p-1" onClick={() => showDeleteModal(product._id)} >Delete</button>
+                <td className="product-category"><span className="categories">Auto mobile Parts</span></td>
+                <td className="action" data-title="Action">
+                    <div className="">
+                        <ul className="list-inline justify-content-center d-flex">
+                            <button type="button" className="btn btn-danger p-1" onClick={() => showDeleteModal(product._id)} >Delete</button>
                         </ul>
                     </div>
 

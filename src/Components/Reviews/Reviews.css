@@ -37,3 +37,8 @@
     background: var(--primary);
     border-color: var(--primary);
 }
+
+
+.carousel-indicators{
+   background-color: #a4a4a4!important;
+}
